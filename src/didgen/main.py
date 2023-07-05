@@ -17,9 +17,18 @@ def version():
 
 
 @cli.command
-def generate():
+@click.option(
+    "-n",
+    "--number",
+    "number",
+    type=int,
+    required=False,
+    default=1,
+    help="Number of key to generate. Defaults to 1",
+)
+def generate(number):
     """Generate the W3C Decentralized Identifier"""
-    generator()
+    generator(number)
 
 
 if __name__ == "__main__":
