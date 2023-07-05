@@ -1,5 +1,6 @@
 # W3C DID Generator
 This app generate ED25519 keys.
+
 [![version](https://img.shields.io/github/v/release/okp4/template-python?style=for-the-badge&logo=github)](https://github.com/okp4/template-python/releases)
 [![lint](https://img.shields.io/github/actions/workflow/status/okp4/template-python/lint.yml?label=lint&style=for-the-badge&logo=github)](https://github.com/okp4/template-python/actions/workflows/lint.yml)
 [![build](https://img.shields.io/github/actions/workflow/status/okp4/template-python/build.yml?label=build&style=for-the-badge&logo=github)](https://github.com/okp4/template-python/actions/workflows/build.yml)
