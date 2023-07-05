@@ -20,14 +20,12 @@ ENV \
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN  apt-get update \
-  && apt-get install --no-install-recommends -y \
-    build-essential=12.6 \
-    curl=7.64.0-4+deb10u6 \
-  && curl -sSL https://install.python-poetry.org | python3 \
-  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
-  && apt-get clean -y  \
-  && rm -rf /var/lib/apt/lists/*
+RUN  apt-get update
+RUN apt-get install --no-install-recommends -y build-essential=12.6 curl=7.64.0-4+deb10u6
+RUN curl -sSL https://install.python-poetry.org | python3
+RUN apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+RUN apt-get clean -y
+RUN rm -rf /var/lib/apt/lists/*
 
 ENV PATH="${PATH}:/root/.local/bin"
 
@@ -51,4 +49,4 @@ COPY --from=builder /build/dist/*.whl /tmp/whl/
 RUN  python3 -m pip install --no-cache-dir /tmp/whl/*.whl \
   && rm -rf /tmp/whl
 
-ENTRYPOINT ["my-app"]
+ENTRYPOINT ["didgen"]
