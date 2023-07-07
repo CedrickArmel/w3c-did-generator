@@ -20,12 +20,12 @@ plugins:
               hasChanged: true
               numMatches: 1
               numReplacements: 1
-        - files: [ src/my_app/__init__.py ]
+        - files: [ src/didgen/__init__.py ]
           from: ^__version__ = ".+"
           to: __version__ = "${nextRelease.version}"
           countMatches: true
           results:
-            - file: src/my_app/__init__.py
+            - file: src/didgen/__init__.py
               hasChanged: true
               numMatches: 1
               numReplacements: 1
@@ -33,6 +33,6 @@ plugins:
   - - "@semantic-release/git"
     - assets:
         - CHANGELOG.md
-        - src/my_app/__init__.py
+        - src/didgen/__init__.py
         - pyproject.toml
       message: "chore(release): perform release ${nextRelease.version}"
